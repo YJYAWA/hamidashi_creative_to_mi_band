@@ -1,0 +1,1 @@
+{"characterMap":{},"characterFaceMap":{},"resourceManifest":{"paths":{"bg":{},"ev":{},"sd":{}}}}
