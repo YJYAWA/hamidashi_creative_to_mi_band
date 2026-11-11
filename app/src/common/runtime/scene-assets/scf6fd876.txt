@@ -1,0 +1,1 @@
+{"characterMap":{"f01036||":"sd/b_f0104.png"},"characterFaceMap":{"f01036||":"/common/sd/f_7f8fafb96c.png"},"resourceManifest":{"paths":{"bg":{},"ev":{},"sd":{}}}}

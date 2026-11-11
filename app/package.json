@@ -1,0 +1,13 @@
+{
+  "name": "hamidashi-creative-miband",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Artemis Engine visual novel port to Xiaomi Band (Vela quick app)",
+  "scripts": {
+    "build": "aiot build",
+    "resign": "aiot resign"
+  },
+  "devDependencies": {
+    "aiot-toolkit": "2.0.5"
+  }
+}

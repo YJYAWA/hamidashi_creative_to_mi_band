@@ -1,0 +1,1 @@
+{"characterMap":{"f00403||":"sd/b_f0413.png","f02192||":"sd/b_f0549.png","f02193||":"sd/b_f0442.png"},"characterFaceMap":{"f00403||":"/common/sd/f_2698132a3f.png","f02192||":"/common/sd/f_8df691c572.png","f02193||":"/common/sd/f_c924c28fa8.png"},"resourceManifest":{"paths":{"bg":{},"ev":{},"sd":{}}}}

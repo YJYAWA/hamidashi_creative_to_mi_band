@@ -1,0 +1,20 @@
+# 依赖
+node_modules/
+package-lock.json
+
+# 构建产物（资源已入库，这里只排除构建缓存与打包结果）
+build/
+dist/
+.temp_*/
+*.rpk
+*.rpk.idsig
+*.log
+
+# 中间产物
+work/
+build/prep/
+build/raw/
+
+# 系统
+.DS_Store
+Thumbs.db

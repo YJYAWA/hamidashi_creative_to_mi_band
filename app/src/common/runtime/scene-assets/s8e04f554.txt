@@ -1,0 +1,1 @@
+{"characterMap":{"f03790||":"sd/b_f0523.png","f03791||":"sd/b_f0526.png","f03792||":"sd/b_f0523.png","f03793||":"sd/b_f0523.png"},"characterFaceMap":{"f03790||":"/common/sd/f_a7c5b6b790.png","f03791||":"/common/sd/f_5a05670af2.png","f03792||":"/common/sd/f_1479018213.png","f03793||":"/common/sd/f_18394ffb7e.png"},"resourceManifest":{"paths":{"bg":{},"ev":{},"sd":{}}}}
