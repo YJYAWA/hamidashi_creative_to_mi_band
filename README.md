@@ -6,6 +6,7 @@
 - 构建链：`aiot-toolkit` 2.0.5（AIoT IDE 同款 `aiot build` / `aiot resign`）
 - 引擎：**Artemis Engine**（不是 KiriKiri）
 - 成品：解压 19.18 MiB / 2859 个文件 / 表情 1100 张 / 台词行覆盖 80.3%
+- **状态：已在小米手环 10 真机安装并运行通过**（v32）
 
 > **本仓库包含已转换的游戏素材**（CG、立绘、背景、剧本），仅为方便研究与复现，**仅供学习交流使用**。
 > 请在**下载后 24 小时内删除**，详见 [DISCLAIMER.md](DISCLAIMER.md)。
@@ -219,7 +220,7 @@ const out = b.minifySync(code, JSON.stringify({
 表现为 `SAFE_DELETE_BULK_CONFIRM_REQUIRED`，但此时 rpk 已经生成在 `.temp_app12/dist/`。处理办法：构建前先把 `app12/build` 移走，构建后手动压缩 JS，再用 `aiot resign` 重签：
 
 ```bash
-bash tools/finalize_v32.sh hamidashi-band10-v32.rpk
+bash tools/finalize.sh hamidashi-band10.rpk
 ```
 
 ### 3.4 签名
@@ -246,12 +247,12 @@ openssl req -newkey rsa:2048 -nodes -keyout sign/private.pem -x509 -days 3650 \
 | v29 | 16.72 | **20.31** | 3116 | 失败 |
 | v30 | 17.34 | 21.02 | 3476 | 失败 |
 | v31 | 16.73 | **20.33** | 3116 | 失败 |
-| v32 | 15.69 | **19.18** | 2876 | 待验证 |
+| v32 | 15.69 | **19.18** | 2876 | **成功** |
 
 结论：
 
 1. **判据是解压体积**。v31 的 rpk 只有 16.73 MiB，看着很安全，但解压 20.33 MiB，装不上。
-2. **红线在 19.23（可用）与 20.31（失败）之间**，`20 MiB` 是最可能的阈值。
+2. **红线在 19.18（可用）与 20.31（失败）之间**，`20 MiB` 是最可能的阈值。
 3. **文件数另一条线**：3116 可用，3476 已失败，5763 / 7313 明确失败。
 4. 体积和文件数**互相独立**，两个都要控。
 
@@ -326,7 +327,7 @@ openssl req -newkey rsa:2048 -nodes -keyout sign/private.pem -x509 -days 3650 \
 | v29 | 11-11 | 16.72 | 20.31 | 3116 | 表情改墨色层（可跨身体去重，覆盖率 77.7% → 85.9%） | **装不上** |
 | v30 | 11-11 | 17.34 | 21.02 | 3476 | 文件数探针（+1700 张表情） | 装不上，确认文件数红线 |
 | v31 | 11-11 | 16.73 | 20.33 | 3116 | 墨色层 + 8 级 alpha + 闭嘴提亮 | **装不上** |
-| v32 | 11-11 | 15.69 | 19.18 | 2876 | 回差量烘焙 + 1100 张 + CG 黑屏修复 + JS 压缩 | 待验证 |
+| v32 | 11-11 | 15.69 | 19.18 | 2876 | 回差量烘焙 + 1100 张 + CG 黑屏修复 + JS 压缩 | **真机可装** |
 
 ### 6.1 这 32 轮里真正值钱的六个发现
 
@@ -480,7 +481,8 @@ bash tools/finalize.sh hamidashi-band10.rpk
 
 - 原作：**Madosoft**「ハミダシクリエイティブ」，PC 版发行 iMel Inc.
 - 构建工具链：小米 AIoT Toolkit
-- 界面结构参考：[hezdaaa/limelight-lemonade-jam-miband](https://github.com/hezdaaa/limelight-lemonade-jam-miband)
+- 界面与工程结构参考：[qihe114514/sabbatofthewitch-vela](https://github.com/qihe114514/sabbatofthewitch-vela)
+- CG 处理思路参考：B 站教程 <https://www.bilibili.com/opus/1208440644236578578>（仅参考流程，压缩参数自行确定）
 
 ---
 
